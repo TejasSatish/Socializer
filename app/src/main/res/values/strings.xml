@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Socializer</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="google_maps_key">AIzaSyCJl1cSsa-A_jhpEY52kJU-S6fXV5oDv7U</string>
 </resources>
