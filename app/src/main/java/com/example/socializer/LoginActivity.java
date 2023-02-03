@@ -28,7 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     TextView createAccount;
-    EditText uEmail,uPassword,uConfirmPassword;
+    EditText uEmail,uPassword;
     Button login,google;
     String emailValidateString="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
@@ -139,5 +139,6 @@ public class LoginActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
         startActivity(intent);
+        finish();
     }
 }

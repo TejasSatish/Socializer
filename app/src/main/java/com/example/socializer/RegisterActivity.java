@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
             uEmail.setError("Enter a valid email address");
             uEmail.requestFocus();
         }else if(password.isEmpty() || password.length()<8){
-            uPassword.setError("Enter a valid password of atleast 8 characters");
+            uPassword.setError("Enter a valid password of atl east 8 characters");
             uPassword.requestFocus();
         }else if(!password.equals(confirmPassword)){
             uConfirmPassword.setError("Passwords do not match");
@@ -104,5 +104,6 @@ public class RegisterActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
         startActivity(intent);
+        finish();
     }
 }
