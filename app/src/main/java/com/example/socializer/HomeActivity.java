@@ -53,10 +53,16 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_home);
 
         map = findViewById(R.id.map);
-        search= findViewById(R.id.search);
-        chat= findViewById(R.id.chat);
-        search= findViewById(R.id.profile);
+        search=(Button) findViewById(R.id.search);
+        chat=(Button) findViewById(R.id.chat);
+        profile=(Button) findViewById(R.id.profile);
 
+
+
+
+        //to get user current location
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
+        getLocation();
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +71,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
-                finish();
             }
         });
         chat.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +80,7 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
-                finish();
+
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {
@@ -85,13 +90,9 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
-                finish();
+
             }
         });
-
-        //to get user current location
-        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
-        getLocation();
     }
 
     private void getLocation(){

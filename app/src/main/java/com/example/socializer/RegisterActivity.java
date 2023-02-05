@@ -87,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
                         progressDialog.dismiss();
-                        sendToHome();
+                        sendToProfile();
                         Toast.makeText(RegisterActivity.this, "Registration Successful!", Toast.LENGTH_SHORT).show();
                     }else{
                         progressDialog.dismiss();
@@ -99,8 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void sendToHome() {
-        Intent intent=new Intent(RegisterActivity.this,HomeActivity.class);
+    private void sendToProfile() {
+        Intent intent=new Intent(RegisterActivity.this,ProfileActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
         startActivity(intent);
