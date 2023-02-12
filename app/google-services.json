@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "334634417971",
+    "firebase_url": "https://socializer-820d9-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "socializer-820d9",
     "storage_bucket": "socializer-820d9.appspot.com"
   },
@@ -14,7 +15,23 @@
       },
       "oauth_client": [
         {
-          "client_id": "334634417971-85lmfgekh10dgjdhqorcoetaa6uaa8vs.apps.googleusercontent.com",
+          "client_id": "334634417971-0k16kn4fq28fdv3mep4sq5pavls4vf2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.socializer",
+            "certificate_hash": "dd6231dd46fe92348e121abb2aa7d77c9c206153"
+          }
+        },
+        {
+          "client_id": "334634417971-2vskut0dfkb8in7p3nbsf1327g33clc1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.socializer",
+            "certificate_hash": "f007688f3ddfe769f38a9687d3ff366f8bbb16c7"
+          }
+        },
+        {
+          "client_id": "334634417971-nne8cd31k5sb9565i4rcf75smt78ca24.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

@@ -55,6 +55,12 @@ public class LoginActivity extends AppCompatActivity {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
 
+        //autologin
+        //If user exists, it log ins with prev credentials
+        if(firebaseUser!=null){
+            sendToHome();
+        }
+
 
         googleSignInOptions=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()

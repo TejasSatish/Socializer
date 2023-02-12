@@ -51,8 +51,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
     private static final int REQ_CODE=101;
     FrameLayout map;
     Button search,profile,chat;
-
-
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     @Override
@@ -77,7 +75,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(HomeActivity.this,SearchActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
             }
@@ -86,7 +83,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(HomeActivity.this,ChatActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
 
@@ -96,7 +92,6 @@ public class HomeActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(HomeActivity.this,ProfileActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
 
