@@ -98,12 +98,8 @@ public class RegisterActivity extends AppCompatActivity {
                         firebaseDatabase =FirebaseDatabase.getInstance();
                         databaseReference = firebaseDatabase.getReferenceFromUrl("https://socializer-820d9-default-rtdb.asia-southeast1.firebasedatabase.app");
 
-                        HashMap<String, Object> hashMap= new HashMap<>();
-                        hashMap.put("name",name);
-                        hashMap.put("email",email);
-                        hashMap.put("pwd",password);
-
-                        databaseReference.child("Users").child(uid).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        UserModel userModel= new UserModel(uid,name,email,password);
+                        databaseReference.child("Users").child(uid).setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){

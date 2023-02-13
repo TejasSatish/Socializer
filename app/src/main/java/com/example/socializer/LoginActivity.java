@@ -140,7 +140,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void sendToHome() {
+    private void sendToHome(){
         Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
