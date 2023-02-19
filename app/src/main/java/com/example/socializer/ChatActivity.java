@@ -44,7 +44,7 @@ public class ChatActivity extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     String uid=dataSnapshot.getKey();
                     Log.d("lol",uid);
-                    if(!uid.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                    if(!uid.equals(FirebaseAuth.getInstance().getUid())){
                        //UserModel userModel=dataSnapshot.child(uid).getValue(UserModel.class);
                         UserModel userModel;
                         userModel = dataSnapshot.getValue(UserModel.class);
