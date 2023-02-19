@@ -2,6 +2,7 @@ package com.example.socializer;
 
 public class UserModel {
     private String userId,userName,userEmail,userPassword;
+    public UserModel(){}
     public UserModel(String userId, String userName, String userEmail, String userPassword){
         this.userId=userId;
         this.userName=userName;

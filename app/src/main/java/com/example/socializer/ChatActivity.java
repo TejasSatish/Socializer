@@ -35,7 +35,7 @@ public class ChatActivity extends AppCompatActivity {
         binding.recycler.setAdapter(userAdapter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
 
-        databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://socializer-820d9-default-rtdb.asia-southeast1.firebasedatabase.app").child("Users");
+        databaseReference= FirebaseDatabase.getInstance("https://socializer-820d9-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Users");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -45,8 +45,11 @@ public class ChatActivity extends AppCompatActivity {
                     String uid=dataSnapshot.getKey();
                     Log.d("lol",uid);
                     if(!uid.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                        UserModel userModel=dataSnapshot.child(uid).getValue(UserModel.class);
+                       //UserModel userModel=dataSnapshot.child(uid).getValue(UserModel.class);
+                        UserModel userModel;
+                        userModel = dataSnapshot.getValue(UserModel.class);
                         userAdapter.add(userModel);
+
                     }
                 }
             }

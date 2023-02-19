@@ -95,11 +95,11 @@ public class RegisterActivity extends AppCompatActivity {
                         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                         String uid=firebaseUser.getUid();
 
-                        firebaseDatabase =FirebaseDatabase.getInstance();
-                        databaseReference = firebaseDatabase.getReferenceFromUrl("https://socializer-820d9-default-rtdb.asia-southeast1.firebasedatabase.app");
+                        firebaseDatabase =FirebaseDatabase.getInstance("https://socializer-820d9-default-rtdb.asia-southeast1.firebasedatabase.app");
+                        databaseReference = firebaseDatabase.getReference("Users");
 
                         UserModel userModel= new UserModel(uid,name,email,password);
-                        databaseReference.child("Users").child(uid).setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        databaseReference.child(uid).setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful()){
